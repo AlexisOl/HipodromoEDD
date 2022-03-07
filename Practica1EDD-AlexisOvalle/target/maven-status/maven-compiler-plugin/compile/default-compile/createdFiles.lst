@@ -23,7 +23,6 @@ GUI/getOrder.class
 GUI/ApuestasAceptadas$2.class
 Main/NewMain.class
 CriticServices/betsVerify.class
-GUI/ApuestasRechazadas.class
 objects/Apostador.class
 GUI/getOrder$2.class
 Archive/WriteArchive.class
