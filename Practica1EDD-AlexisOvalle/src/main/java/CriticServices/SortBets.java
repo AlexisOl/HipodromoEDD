@@ -35,7 +35,7 @@ public class SortBets {
         for (int i = 0; i < apuestasOrden.length; i++) {
             if (apuestasOrden[i].getValida()== true) {
                 String texto = "";
-                texto = apuestasOrden[i].getNombre() + " Punteo: " + apuestasOrden[i].getPunteo();
+                texto = apuestasOrden[i].getNombre() + " Valor Total: " + apuestasOrden[i].getPunteo();
                 textArea.append(texto+"\n");
             }
         }
@@ -44,27 +44,31 @@ public class SortBets {
       
     public void ordenamientoPunteo(Apuesta[] apuestasOrden, JTextArea textArea){
         textArea.setText(null);
-        int posicion;
+        int actual;
         //variables auxiliares
         Apuesta inicial = new Apuesta();
         Apuesta auxiliar = new Apuesta();
 
         for (int i = 0; i < apuestasOrden.length; i++) {
             inicial = apuestasOrden[i];
-            posicion = i;
+            actual = i;
+            
             for (int j = i + 1; j < apuestasOrden.length; j++) {
                 if (apuestasOrden[j].getPunteo() < inicial.getPunteo()) {
                     inicial = apuestasOrden[j];
-                    posicion = j;
+                    actual = j;
                 }
             }
             //ordenamiento burbuja
-            if (posicion != i) {
+            if (actual != i) {
+       
                 auxiliar = apuestasOrden[i];
-                apuestasOrden[i] = apuestasOrden[posicion];
-                apuestasOrden[posicion] = auxiliar;
+                apuestasOrden[i] = apuestasOrden[actual];
+                apuestasOrden[actual] = auxiliar;
             }
         }
+        
+        
         
         //impresion
         for (int i = apuestasOrden.length - 1; i >= 0; i--) {
